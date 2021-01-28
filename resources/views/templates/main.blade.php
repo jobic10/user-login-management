@@ -46,7 +46,7 @@
                     <a class="nav-link" href="{{ url('/home') }}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                     <form id='logout-form' style="display: none" action="{{ route('logout') }}" method="POST">
                         @csrf
                     </form>
