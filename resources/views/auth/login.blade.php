@@ -1,5 +1,24 @@
 @extends('templates.main')
 
 @section('content')
-<h1>Hi From Login</h1>
+<h1>Login</h1>
+<form method="POST" action="{{ route('login') }}">
+    @csrf
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email"  value="{{ old('email') }}"  name="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="email">
+        @error('email')
+            <span class="invalid-feedback" role='alert'>{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password">
+        @error('password')
+            <span class="invalid-feedback" role='alert'>{{ $message }}</span>
+        @enderror
+      </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 @endsection
