@@ -8,3 +8,10 @@ body{
     background-color: $background;
     color: $text;
 }
+
+.navbar{
+    background-color: $navBar;
+    a{
+        color: white;
+    }
+}
