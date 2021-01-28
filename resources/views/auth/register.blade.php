@@ -1,7 +1,7 @@
 @extends('templates.main')
 
 @section('content')
-<form method="POST">
+<form method="POST" action="{{ route('register') }}">
     @csrf
     <div class="mb-3">
         <label for="name" class="form-label">Full Name</label>
