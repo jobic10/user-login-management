@@ -10732,6 +10732,7 @@ body {
 
 .navbar {
   background-color: #1E2632;
+  box-shadow: 0 5px 10px 0 rgba(204, 204, 204, 0.5);
 }
 .navbar a {
   color: white;
