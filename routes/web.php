@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +16,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::resource('/admin/users', UserController::class);
+Route::resource('/admin/users', 'Admin\UserController');
