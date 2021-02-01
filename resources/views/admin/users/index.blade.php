@@ -18,7 +18,7 @@
                 <th scope="row">{{ $user->id }}</th>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->id }}</td>
+                <td><a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-primary">Edit</a></td>
               </tr>
             @endforeach
         </tbody>
