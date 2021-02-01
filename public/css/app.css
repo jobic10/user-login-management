@@ -10739,6 +10739,10 @@ body {
   color: white;
 }
 
+h1, .h1 {
+  margin-bottom: 30px;
+}
+
 .card {
   box-shadow: 0 2px 4px rgba(204, 204, 204, 0.8);
   padding: 20px 40px;
