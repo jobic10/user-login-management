@@ -18,7 +18,15 @@
                 <th scope="row">{{ $user->id }}</th>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td><a href="{{ route('admin.users.edit', $user->id) }}" role="button" class="btn btn-sm btn-primary">Edit</a></td>
+                <td>
+                    <a href="{{ route('admin.users.edit', $user->id) }}" role="button" class="btn btn-sm btn-primary">Edit</a>
+                    <form id="delete-user-form-{{ $user->id }}" action="{{ route('admin.users.destroy', $user->id) }}" method="POST" style="display:none">
+                    @csrf
+                    @method('DELETE')
+
+                    </form>
+                    <button class="btn btn-sm btn-danger" onclick="event.preventDefault(); document.getElementById('delete-user-form-{{ $user->id }}').submit()" type="button">Delete</button>
+                </td>
               </tr>
             @endforeach
         </tbody>
