@@ -1,10 +1,10 @@
 @extends('templates.main')
 
 @section('content')
-<div class="row">
+<div class="row justify-content-between">
     <div class="col-12">
-        <h1 class="float-left">Users</h1>
-        <a href="{{ route('admin.users.create')}}" role="button" class="btn btn-sm btn-success">Add</a>
+        <h1 class="float-start">Users</h1>
+        <a href="{{ route('admin.users.create') }}" role="button" class="btn btn-sm btn-success float-end">Create</a>
 
     </div>
 </div>
