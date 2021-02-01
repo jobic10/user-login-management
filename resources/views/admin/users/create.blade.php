@@ -26,7 +26,12 @@
             <span class="invalid-feedback" role='alert'>{{ $message }}</span>
         @enderror
       </div>
-
+      <div class="mb-3">
+          @foreach ($roles as $role)
+          <input type="checkbox" name="roles[]" value="{{ $role->id }}" id="{{ $role->name }}" class="form-check-input">
+          <label for="{{ $role->name }}" class="form-check-label">{{ $role->name }}</label>
+          @endforeach
+    </div>
 
 
     <button type="submit" class="btn btn-primary">Register</button>
