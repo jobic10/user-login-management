@@ -41,7 +41,7 @@ class UserController extends Controller
         $validateDate = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|max:255|unique:users',
-            'password' => 'required|min:8'
+            'password' => 'required|min:8|max:40'
         ]);
         $user = User::create($request->except(['_token','roles']));
         $user->roles()->sync($request->roles);
