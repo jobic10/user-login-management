@@ -3,7 +3,7 @@
 @section('content')
 <h1>Edit</h1>
 <div class="card">
-<form method="POST" action="{{ route('admin.users.update') }}">
+<form method="POST" action="{{ route('admin.users.update', $user->id) }}">
     @method('PATCH')
 @include('admin.users.partials.form')
   </form>
