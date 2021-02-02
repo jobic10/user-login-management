@@ -38,12 +38,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validateDate = $request->validate([
+        $validateData = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|max:255|unique:users',
             'password' => 'required|min:8|max:40'
         ]);
-        $user = User::create($request->except(['_token','roles']));
+        $user = User::create($validateData);
         $user->roles()->sync($request->roles);
         return redirect(route('admin.users.index'));
 
