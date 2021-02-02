@@ -24,7 +24,7 @@
     @endisset
     <div class="mb-3">
       @foreach ($roles as $role)
-      <input type="checkbox" name="roles[]" value="{{ $role->id }}" id="{{ $role->name }}" class="form-check-input">
+      <input type="checkbox" name="roles[]" value="{{ $role->id }}" id="{{ $role->name }}" class="form-check-input" @isset($user) @if(in_array($role->id, $user->roles->pluck('id')->toArray())) checked @endif @endisset>
       <label for="{{ $role->name }}" class="form-check-label">{{ $role->name }}</label>
       @endforeach
 </div>
