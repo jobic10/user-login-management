@@ -1,14 +1,14 @@
 @csrf
 <div class="mb-3">
     <label for="name" class="form-label">Full Name</label>
-    <input type="text" value="{{ old('name') }}" required name="name" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="name">
+    <input type="text" value="{{ old('name') }}@isset($user) {{ $user->name }} @endisset" required name="name" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="name">
     @error('name')
         <span class="invalid-feedback" role='alert'>{{ $message }}</span>
     @enderror
   </div>
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
-    <input type="email"  value="{{ old('email') }}"  required name="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="email">
+    <input type="email"  value="{{ old('email') }}@isset($user) {{ $user->email }} @endisset"  required name="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="email">
     @error('email')
         <span class="invalid-feedback" role='alert'>{{ $message }}</span>
     @enderror
