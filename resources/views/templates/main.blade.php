@@ -56,7 +56,7 @@
               </div>
             </div>
           </nav>
-          <nav class="navbar navbar-expand-lg">
+          <nav class="navbar navbar-expand-lg sub-nav">
             <div class="container">
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">

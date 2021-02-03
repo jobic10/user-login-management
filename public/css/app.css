@@ -10732,7 +10732,6 @@ body {
 
 .navbar {
   background-color: #1E2632;
-  box-shadow: 0 5px 10px 0 rgba(204, 204, 204, 0.5);
   margin-bottom: 40px;
 }
 .navbar a {
@@ -10746,4 +10745,13 @@ h1, .h1 {
 .card {
   box-shadow: 0 2px 4px rgba(204, 204, 204, 0.8);
   padding: 20px 40px;
+}
+
+.sub-nav {
+  background-color: white;
+  box-shadow: 0 5px 10px 0 rgba(204, 204, 204, 0.5);
+  margin-bottom: 40px;
+}
+.sub-nav a {
+  color: #0d6efd;
 }

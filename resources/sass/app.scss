@@ -11,7 +11,6 @@ body{
 
 .navbar{
     background-color: $navBar;
-    box-shadow: 0 5px 10px 0 rgba(204, 204, 204, 0.5);
     a{
         color: white;
     }
@@ -25,4 +24,15 @@ h1{
 .card{
     box-shadow: 0 2px 4px rgba(204,204,204,0.8);
     padding:20px 40px;
+}
+
+
+.sub-nav{
+    background-color: white;
+    box-shadow: 0 5px 10px 0 rgba(204, 204, 204, 0.5);
+    margin-bottom: 40px;
+    a{
+        color: $primary;
+    };
+
 }
