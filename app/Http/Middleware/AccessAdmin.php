@@ -19,5 +19,6 @@ class AccessAdmin
         if(Gate::allows('is-admin')){
             return $next($request);
         }
+        return redirect('/');
     }
 }
