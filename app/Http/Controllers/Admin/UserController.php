@@ -21,8 +21,11 @@ class UserController extends Controller
         if (Gate::denies('logged-in')){
             return abort(403);
         }
-        $users = User::paginate(10);
-        return view('admin.users.index', ['users' => $users]);
+        if(Gate::allows('is-admin')){
+            $users = User::paginate(10);
+            return view('admin.users.index', ['users' => $users]);
+        }
+        dd("Admin only!");
     }
 
     /**
