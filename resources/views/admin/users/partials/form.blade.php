@@ -23,7 +23,7 @@
     </div>
     <div class="mb-3">
         <label for="confirm_password" class="form-label">Confirm Password</label>
-      <input type="password" name="confirm_password" required class="form-control @error('password') is-invalid @enderror" id="confirm_password">
+      <input type="password" name="password_confirmation" required class="form-control @error('password') is-invalid @enderror" id="confirm_password">
       </div>
     @endisset
     <div class="mb-3">
