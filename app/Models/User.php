@@ -57,7 +57,7 @@ class User extends Authenticatable
      * @param  string $role
      * @return bool
      */
-    public function hasAnyRole($role){
+    public function hasAnyRole(string $role){
         return null !== $this->roles()->where('name', $role)->first();
     }
 
@@ -67,7 +67,7 @@ class User extends Authenticatable
      * @param  array $roles
      * @return bool
      */
-    public function hasAnyRoles($roles){
+    public function hasAnyRoles(array $roles){
         return null !== $this->roles()->whereIn('name', $roles)->first();
     }
 }
