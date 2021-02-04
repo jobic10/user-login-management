@@ -16,6 +16,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::prefix('admin')->name('admin.')->group(function(){
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
     Route::resource('/users','Admin\UserController');
 });
