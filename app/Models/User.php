@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function setPasswordAttribute($password){
         $this->attributes['password'] = Hash::make($password);
     }
+
+    public function hasAnyRole($role){
+        return null !== $this->roles()->where('name', $role)->first();
+    }
 }
