@@ -56,6 +56,7 @@
               </div>
             </div>
           </nav>
+          @can('logged-in')
           <nav class="navbar navbar-expand-lg sub-nav">
             <div class="container">
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -70,6 +71,8 @@
 
               </div>
           </nav>
+          @endcan
+
         <div>
 
 
