@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Gate;
 class AccessAdmin
 {
     /**
@@ -16,6 +16,8 @@ class AccessAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(Gate::allows('is-admin')){
+            return $next($request);
+        }
     }
 }
