@@ -84,7 +84,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if (!$user)
-        return redirect(route('admin.users.index'))->with('error', 'You do not have access to this!');
+        return redirect(route('admin.users.index'))->with('error', 'You do not have access to this page!');
         $user->update($request->except(['_token', 'roles']));
         $user->roles()->sync($request->roles);
         return redirect(route('admin.users.index'));
