@@ -13,7 +13,7 @@ class HomepageTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_homepage_loads()
     {
         $response = $this->get('/');
 
