@@ -7,7 +7,7 @@
    <input type="hidden" name="token" value="{{ $request->token }}">
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
-        <input type="email"  value="{{ old('email') }}"  required name="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="email">
+        <input type="email"  value="{{ $request->email }}" readonly required name="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="email">
         @error('email')
             <span class="invalid-feedback" role='alert'>{{ $message }}</span>
         @enderror
