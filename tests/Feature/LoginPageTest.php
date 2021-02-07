@@ -31,8 +31,9 @@ class LoginPageTest extends TestCase
            'email' => $user->email,
            'password' => 'password'
        ]);
-       $this->get('/admin/user');
+       $this->get('/admin/users');
        $response->assertRedirect('/');
     }
+
 
 }
