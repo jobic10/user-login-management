@@ -17,11 +17,12 @@ class LoginPageTest extends TestCase
     public function test_user_can_login_using_login_form()
     {
        $user = User::factory()->create();
-       $response = $this->post('/',[
+       $response = $this->post('/login',[
            'email' => $user->email,
            'password' => 'password'
        ]);
        $this->assertAuthenticated();
        $response->assertRedirect('/');
     }
+
 }
