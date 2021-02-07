@@ -24,5 +24,15 @@ class LoginPageTest extends TestCase
        $this->assertAuthenticated();
        $response->assertRedirect('/');
     }
+    public function test_user_cannot_access_admin_page()
+    {
+       $user = User::factory()->create();
+       $response = $this->post('/login',[
+           'email' => $user->email,
+           'password' => 'password'
+       ]);
+       $this->get('/admin/user');
+       $response->assertRedirect('/');
+    }
 
 }
