@@ -9,6 +9,7 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Password;
 
 class UserController extends Controller
 {
@@ -46,6 +47,7 @@ class UserController extends Controller
 
         // $user = User::create($request->validated());
         $user->roles()->sync($request->roles);
+        Password::sendResetLink($request->only('email'));
         return redirect(route('admin.users.index'))->with('success',"User $user[name] Created");
 
     }
