@@ -1,16 +1,10 @@
 @extends('templates.main')
 
 @section('content')
-<h1>Register</h1>
-<form method="POST" action="{{ route('register') }}">
+<h1>Reset Password</h1>
+<form method="POST" action="{{ url('reset-password') }}">
     @csrf
-    <div class="mb-3">
-        <label for="name" class="form-label">Full Name</label>
-        <input type="text" value="{{ old('name') }}" required name="name" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="name">
-        @error('name')
-            <span class="invalid-feedback" role='alert'>{{ $message }}</span>
-        @enderror
-      </div>
+   <input type="hidden" name="token" value="{{ $request->token }}">
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
         <input type="email"  value="{{ old('email') }}"  required name="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="email">
